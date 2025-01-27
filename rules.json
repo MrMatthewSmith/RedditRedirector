@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "priority": 1,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "url": "https://old.reddit.com/r/pornfree"
+      }
+    },
+    "condition": {
+      "urlFilter": "*://*.reddit.com/r/politics*",
+      "resourceTypes": ["main_frame"]
+    }
+  },
+  {
+    "id": 2,
+    "priority": 1,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "url": "https://old.reddit.com/r/pornfree"
+      }
+    },
+    "condition": {
+      "urlFilter": "*://*.reddit.com/r/popular*",
+      "resourceTypes": ["main_frame"]
+    }
+  }
+]
