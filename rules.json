@@ -3,41 +3,10 @@
     "id": 1,
     "priority": 1,
     "action": {
-      "type": "redirect",
-      "redirect": {
-        "url": "https://old.reddit.com/r/pornfree"
-      }
+      "type": "block"
     },
     "condition": {
-      "urlFilter": "*://*.reddit.com/r/politics*",
-      "resourceTypes": ["main_frame"]
-    }
-  },
-  {
-    "id": 2,
-    "priority": 1,
-    "action": {
-      "type": "redirect",
-      "redirect": {
-        "url": "https://old.reddit.com/r/pornfree"
-      }
-    },
-    "condition": {
-      "urlFilter": "*://*.reddit.com/r/popular*",
-      "resourceTypes": ["main_frame"]
-    }
-  },
-  {
-    "id": 3,
-    "priority": 1,
-    "action": {
-      "type": "redirect",
-      "redirect": {
-        "url": "https://old.reddit.com/r/pornfree"
-      }
-    },
-    "condition": {
-      "urlFilter": "*://*.reddit.com/r/conservative*",
+      "urlFilter": "*://*.reddit.com/*",
       "resourceTypes": ["main_frame"]
     }
   }

@@ -1,17 +1,26 @@
 {
   "manifest_version": 3,
-  "name": "Reddit Redirector",
-  "version": "1.0",
-  "description": "Redirects /r/politics to /r/pornfree on Reddit.",
-  "permissions": ["declarativeNetRequest"],
+  "name": "Reddit Blocker",
+  "version": "2.0",
+  "description": "Blocks Reddit and shows a custom warning page.",
+  "permissions": ["declarativeNetRequest", "webNavigation", "tabs"],
   "host_permissions": ["*://*.reddit.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
   "declarative_net_request": {
     "rule_resources": [
       {
-        "id": "ruleset",
+        "id": "blockRules",
         "enabled": true,
         "path": "rules.json"
       }
     ]
-  }
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["warning.html"],
+      "matches": ["<all_urls>"]
+    }
+  ]
 }
