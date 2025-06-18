@@ -1,26 +1,24 @@
 {
   "manifest_version": 3,
   "name": "Reddit Blocker",
-  "version": "2.0",
-  "description": "Blocks Reddit and shows a custom warning page.",
-  "permissions": ["declarativeNetRequest", "webNavigation", "tabs"],
+  "version": "2.4",
+  "description": "Redirects Reddit to a custom warning page with a toggle switch.",
+  "permissions": ["declarativeNetRequest", "storage", "tabs"],
   "host_permissions": ["*://*.reddit.com/*"],
   "background": {
     "service_worker": "background.js"
   },
   "declarative_net_request": {
-    "rule_resources": [
-      {
-        "id": "blockRules",
-        "enabled": true,
-        "path": "rules.json"
-      }
-    ]
+    "rule_resources": []
   },
   "web_accessible_resources": [
     {
-      "resources": ["warning.html"],
+      "resources": ["warning.html", "message.js"],
       "matches": ["<all_urls>"]
     }
-  ]
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Reddit Blocker"
+  }
 }
