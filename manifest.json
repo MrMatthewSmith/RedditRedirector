@@ -20,5 +20,12 @@
   "action": {
     "default_popup": "popup.html",
     "default_title": "Reddit Blocker"
-  }
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.reddit.com/*"],
+      "js": ["content-script.js"],
+      "run_at": "document_idle"
+    }
+  ]
 }
