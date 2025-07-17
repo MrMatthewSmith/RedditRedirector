@@ -1,10 +1,10 @@
 {
   "manifest_version": 3,
-  "name": "Reddit Blocker",
-  "version": "2.4",
-  "description": "Redirects Reddit to a custom warning page with a toggle switch.",
+  "name": "Url Blocker",
+  "version": "2.5",
+  "description": "Redirects Reddit & Facebook to a custom warning page with a toggle switch.",
   "permissions": ["declarativeNetRequest", "storage", "tabs"],
-  "host_permissions": ["*://*.reddit.com/*"],
+  "host_permissions": ["*://*.reddit.com/*", "*://*.facebook.com/*"],
   "background": {
     "service_worker": "background.js"
   },
