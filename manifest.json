@@ -1,10 +1,15 @@
 {
   "manifest_version": 3,
-  "name": "Url Blocker",
-  "version": "2.5",
-  "description": "Redirects Reddit & Facebook to a custom warning page with a toggle switch.",
+  "name": "URL Blocker",
+  "version": "3.0",
+  "description": "Redirects Reddit, Facebook, Twitter, and X.com to a warning page with toggle switches.",
   "permissions": ["declarativeNetRequest", "storage", "tabs"],
-  "host_permissions": ["*://*.reddit.com/*", "*://*.facebook.com/*"],
+  "host_permissions": [
+    "*://*.reddit.com/*",
+    "*://*.facebook.com/*",
+    "*://*.twitter.com/*",
+    "*://*.x.com/*"
+  ],
   "background": {
     "service_worker": "background.js"
   },
@@ -19,11 +24,16 @@
   ],
   "action": {
     "default_popup": "popup.html",
-    "default_title": "Reddit Blocker"
+    "default_title": "Site Blocker"
   },
   "content_scripts": [
     {
-      "matches": ["*://*.reddit.com/*"],
+      "matches": [
+        "*://*.reddit.com/*",
+        "*://*.facebook.com/*",
+        "*://*.twitter.com/*",
+        "*://*.x.com/*"
+      ],
       "js": ["content-script.js"],
       "run_at": "document_idle"
     }
